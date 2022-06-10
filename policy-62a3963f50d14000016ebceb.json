@@ -22,6 +22,18 @@
       "limit": null,
       "field_access_rights": [],
       "allowance_scope": ""
+    },
+    "7b8bbc3fc8e8418161b03f7309949bc6": {
+      "api_name": "new-restapi",
+      "api_id": "7b8bbc3fc8e8418161b03f7309949bc6",
+      "versions": [
+        "Default"
+      ],
+      "allowed_urls": [],
+      "restricted_types": [],
+      "limit": null,
+      "field_access_rights": [],
+      "allowance_scope": ""
     }
   },
   "hmac_enabled": false,
@@ -37,6 +49,6 @@
     "acl": true,
     "per_api": false
   },
-  "last_updated": "1654887999",
+  "last_updated": "1654890095",
   "meta_data": {}
 }
