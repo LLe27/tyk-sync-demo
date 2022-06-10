@@ -32,6 +32,8 @@ docker run --rm \
 ```
 
 ### 3b. `sync` - Synchronise an API Gateway with the contents of a Github repository.
+- One cross-platform solution is to use a bind mount to share the host's .ssh folder to the container.
+- One caveat to consider, however, is that all contents (including private keys) from the .ssh folder will be shared so this approach is only desirable for development and only for trusted container images.
 ```
 docker run --rm \
   --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp \
