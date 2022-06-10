@@ -1,8 +1,8 @@
 {
-  "_id": "62a3422e6130b40001abb103",
-  "id": "62a3422e6130b40001abb103",
-  "name": "Silver Policy",
-  "org_id": "62a341a36130b40001abb0fd",
+  "_id": "62a3421e6130b40001abb102",
+  "id": "62a3421e6130b40001abb102",
+  "name": "Bronze Policy",
+  "org_id": "62a36fedfdc2a90001a4dc7e",
   "rate": 1000,
   "per": 60,
   "quota_max": -1,
@@ -11,18 +11,6 @@
   "throttle_retry_limit": -1,
   "max_query_depth": -1,
   "access_rights": {
-    "c768f88e2dff48ca42bbc39402b11f75": {
-      "api_name": "graphql",
-      "api_id": "c768f88e2dff48ca42bbc39402b11f75",
-      "versions": [
-        "Default"
-      ],
-      "allowed_urls": [],
-      "restricted_types": [],
-      "limit": null,
-      "field_access_rights": [],
-      "allowance_scope": ""
-    },
     "eb6c3951fbd846a373facff6ff610b30": {
       "api_name": "udg",
       "api_id": "eb6c3951fbd846a373facff6ff610b30",
@@ -39,9 +27,9 @@
   "hmac_enabled": false,
   "active": true,
   "is_inactive": false,
-  "date_created": "2022-06-10T13:07:58.864Z",
+  "date_created": "2022-06-10T13:07:42.153Z",
   "tags": [
-    "silver"
+    "bronze"
   ],
   "key_expires_in": 0,
   "partitions": {
@@ -51,6 +39,6 @@
     "acl": true,
     "per_api": false
   },
-  "last_updated": "1654866507",
+  "last_updated": "1654866462",
   "meta_data": {}
 }
