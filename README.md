@@ -8,12 +8,14 @@
 docker run --rm --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp tykio/tyk-sync:v1.2rc3 dump -d="http://localhost:3000/" -s="352d20ee67be67f6340b4c0605b044b7" -t="./tmp"
 ```
 ## 1. Dump
+```
 docker run --rm --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp \
  tykio/tyk-sync:v1.2rc3 \
  dump \
  -d="http://host.docker.internal:3000" \
  -s="9af9bc28f9dc47d46ad825920820ad3e" \
  -t="./tmp"
+```
 
 ## 3. Push changes to Git repo
 ```
