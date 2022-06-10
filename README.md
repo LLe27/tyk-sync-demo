@@ -1,37 +1,64 @@
 # tyk-sync-test
-
-### tyk-sync with tyk-pro-docker-demo
-
-```docker run -it --rm tykio/tyk-sync:v1.2rc3 help```
-
+## Testing the CI/CD flow
+### 1. Create tmp and key directories
 ```
-docker run --rm --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp tykio/tyk-sync:v1.2rc3 dump -d="http://localhost:3000/" -s="352d20ee67be67f6340b4c0605b044b7" -t="./tmp"
+mkdir tmp
+mkdir key
 ```
-## 1. Dump
+
+### 2. `dump` - Extract policies and APIs from a target (dashboard) and place them in the tmp directory.
 ```
+cd tmp
+
 docker run --rm --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp \
  tykio/tyk-sync:v1.2rc3 \
  dump \
  -d="http://host.docker.internal:3000" \
- -s="9af9bc28f9dc47d46ad825920820ad3e" \
+ -s="{API_SECRET_FROM_USER_PROFILE}" \
  -t="./tmp"
+
+cd ..
 ```
 
-## 3. Push changes to Git repo
-```
-cd tmp
-git add .
-git commit -m "My dashboard dump"
-git push -u origin my-test-branch
-```
-
-##  2. Sync using SSH
+### 3a. `publish` - Publish API definitions from a Git repo to a Tyk Gateway or Dashboard.
 ```
 docker run --rm \
   --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp \
   tykio/tyk-sync:v1.2rc3 \
-  sync \
-  -d="http://localhost:3000" \
-  -s="9af9bc28f9dc47d46ad825920820ad3e" \
-  -b="main" git@github.com:LLe27/tyk-sync-test.git
+  publish \
+  -d="http://host.docker.internal:3000" \
+  -s="{API_SECRET_FROM_USER_PROFILE}" \
+  -p="./tmp" 
 ```
+
+### 3b. `sync` - Synchronise an API Gateway with the contents of a Github repository.
+- One cross-platform solution is to use a bind mount to share the host's .ssh folder to the container.
+- One caveat to consider, however, is that all contents (including private keys) from the .ssh folder will be shared so this approach is only desirable for development and only for trusted container images.
+```
+docker run --rm \
+  --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp \
+  -v ~/.ssh:/root/.ssh \
+  tykio/tyk-sync:v1.2rc3 \
+  sync \
+  -d="http://host.docker.internal:3000" \
+  -s="{API_SECRET_FROM_USER_PROFILE}" \
+  -k="/opt/tyk-sync/tmp/key/tyk_sync_key" \
+  -b="refs/heads/my-test-branch" git@github.com:{MY_NAME}/{REPOSITORY_NAME}.git
+```
+
+### 3c. `update` - Attempt to identify matching APIs or Policies in the target, and update those APIs. It does not create new ones.
+```
+docker run --rm \
+  --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp \
+  tykio/tyk-sync:v1.2rc3 \
+  update \
+  -d="http://host.docker.internal:3000" \
+  -s="{API_SECRET_FROM_USER_PROFILE}" \
+  -p="./tmp" \
+  -k="/opt/tyk-sync/key/tyk_sync_key"
+```
+
+#### Note:
+But what about upper environments (pre-prod/prod) ? The concern here is that each Tyk env will be connected to different backend systems, so the target URL´s will change among other stuff (virtual endpoints/middleware configs/etc), I assume this must be a manual change after deploy and subsequent dump of the upper-envs to back-up our configs as code. 
+
+A script will need to be created in order to change the manual
