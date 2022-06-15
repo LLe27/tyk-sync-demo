@@ -41,9 +41,9 @@ docker run --rm \
   tykio/tyk-sync:v1.2rc3 \
   sync \
   -d="http://host.docker.internal:3000" \
-  -s="{API_SECRET_FROM_USER_PROFILE}" \
+  -s="9742e7b164894436702c9dd2d4137ec6" \
   -k="/opt/tyk-sync/tmp/key/tyk_sync_key" \
-  -b="refs/heads/my-test-branch" git@github.com:{MY_NAME}/{REPOSITORY_NAME}.git
+  -b="refs/heads/staging-branch" git@github.com:LLe27/tyk-sync-test.git
 ```
 
 ### 3c. `update` - Attempt to identify matching APIs or Policies in the target, and update those APIs. It does not create new ones.
