@@ -29,7 +29,7 @@ rest api 1:     8f753e64caa04c9573458013d805f6fe
                 api-8f753e64caa04c9573458013d805f6fe.json
 
 bronze policy:  
-62ab323a261a3b0001ad48d0
+id: 62ab323a261a3b0001ad48d0
 _id: 62ab323a261a3b0001ad48d0
 policy-62ab323a261a3b0001ad48d0.json
 "access_rights": {
@@ -122,18 +122,45 @@ policy-62ab328c261a3b0001ad48d2.json
 }
 
 ------------------------------------------------------
-After Sync:
-tcp api 1:      
-graphql api 2:  
-graphql api 1:  
-rest api 3:     
-rest api 2:     
-rest api 1:     
+After Sync
+tcp api 1:		99af18a4ad374d40538ddef590b3432f
+graphql api 2:  efbb9851abb04d64752f4ef0080f2cbe
+graphql api 1:  10645dd132484e776887e125d54202de
+rest api 3:     4024c2b9de274b294db16c0835d35b4b
+rest api 2:		5a57a484b06d401d4a23c037a5f87ef6
+rest api 1:     8f753e64caa04c9573458013d805f6fe
 
-bronze policy:  
-                
-silver policy:  
-                
-gold policy:    
-                
+bronze policy:
+new _id -- 62ab3d293ad88000011c2199
+old _id && id -- 62ab323a261a3b0001ad48d0
 
+GET policy endpoint using id or _id: /api/portal/policies/62ab323a261a3b0001ad48d0 || /api/portal/policies/62ab3d293ad88000011c2199
+_id: 62ab3d293ad88000011c2199
+id: 62ab323a261a3b0001ad48d0
+
+silver policy:
+new _id -- 62ab3d293ad88000011c219a
+old _id && id -- 62ab326a261a3b0001ad48d1
+
+GET policy endpoint using id or _id: /api/portal/policies/62ab326a261a3b0001ad48d1 || /api/portal/policies/62ab3d293ad88000011c219a
+_id: 62ab3d293ad88000011c219a
+id: 62ab326a261a3b0001ad48d1
+
+gold policy:
+new _id -- 62ab3d293ad88000011c219b
+old _id && id -- 62ab328c261a3b0001ad48d2
+
+GET policy endpoint using id or _id: /api/portal/policies/62ab328c261a3b0001ad48d2 || /api/portal/policies/62ab3d293ad88000011c219b
+_id: 62ab3d293ad88000011c219b
+id: 62ab328c261a3b0001ad48d2
+
+List of components/items that will need to be considered in the sync process
+- Target url
+- Bundle id
+- Config data
+- Virtual endpoints
+	- Dashboard url
+	- Token
+	- Org id
+- Any component or process that is using the policy id will need to be updated to use the explicit id and not the mongo _id.
+- Validate custom key has the accurate access to APIs

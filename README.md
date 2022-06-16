@@ -1,4 +1,11 @@
 # tyk-sync-test
+## Prerequisites
+- Tyk-Sync was built using Go 1.10. The minimum Go version required to install is 1.7.
+- In order for policy ID matching to work correctly, your Dashboard must have `allow_explicit_policy_id: true` and `enable_duplicate_slugs: true` and your - Gateway must have `policies.allow_explicit_policy_id: true`.
+- It is assumed you have a Tyk CE or Tyk Pro installation.
+
+> After migrating a Policy from one environment to another, it is important to note that the displayed Policy ID is not going to match. That is okay. It happens because Tyk Dashboard displays the `<code>`Mongo ObjectId`, which is the _id field, but the id is the important part.
+
 ## Testing the CI/CD flow
 ### 1. Create tmp and key directories
 ```
@@ -41,9 +48,9 @@ docker run --rm \
   tykio/tyk-sync:v1.2rc3 \
   sync \
   -d="http://host.docker.internal:3000" \
-  -s="9742e7b164894436702c9dd2d4137ec6" \
+  -s="{API_SECRET_FROM_USER_PROFILE}" \
   -k="/opt/tyk-sync/tmp/key/tyk_sync_key" \
-  -b="refs/heads/staging-branch" git@github.com:LLe27/tyk-sync-test.git
+  -b="refs/heads/{REPOSITORY_BRANCH_NAME}" git@github.com:{USERNAME}/{REPOSITORY_NAME}.git
 ```
 
 ### 3c. `update` - Attempt to identify matching APIs or Policies in the target, and update those APIs. It does not create new ones.
