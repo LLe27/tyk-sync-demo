@@ -4,7 +4,7 @@
 - In order for policy ID matching to work correctly, your Dashboard must have `allow_explicit_policy_id: true` and `enable_duplicate_slugs: true` and your - Gateway must have `policies.allow_explicit_policy_id: true`.
 - It is assumed you have a Tyk CE or Tyk Pro installation.
 
-> After migrating a Policy from one environment to another, it is important to note that the displayed Policy ID is not going to match. That is okay. It happens because Tyk Dashboard displays the `<code>`Mongo ObjectId`, which is the _id field, but the id is the important part.
+> After migrating a Policy from one environment to another, it is important to note that the displayed Policy ID is not going to match. That is okay. It happens because Tyk Dashboard displays the `Mongo ObjectId`, which is the `_id` field, but the id is the important part.
 
 ## Testing the CI/CD flow
 ### 1. Create tmp and key directories
