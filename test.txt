@@ -28,95 +28,98 @@ rest api 2:     5a57a484b06d401d4a23c037a5f87ef6
 rest api 1:     8f753e64caa04c9573458013d805f6fe
                 api-8f753e64caa04c9573458013d805f6fe.json
 
-bronze policy:  62ab323a261a3b0001ad48d0
-                _id: 62ab323a261a3b0001ad48d0
-                policy-62ab323a261a3b0001ad48d0.json
-				"access_rights": {
-					"4024c2b9de274b294db16c0835d35b4b": {
-						"api_name": "rest api 3",
-						"api_id": "4024c2b9de274b294db16c0835d35b4b",
-						"versions": [
-							"Default"
-						],
-						"allowed_urls": [],
-						"restricted_types": [],
-						"limit": null,
-						"field_access_rights": [],
-						"allowance_scope": ""
-					},
-					"5a57a484b06d401d4a23c037a5f87ef6": {
-						"api_name": "rest api 2",
-						"api_id": "5a57a484b06d401d4a23c037a5f87ef6",
-						"versions": [
-							"Default"
-						],
-						"allowed_urls": [],
-						"restricted_types": [],
-						"limit": null,
-						"field_access_rights": [],
-						"allowance_scope": ""
-					},
-					"8f753e64caa04c9573458013d805f6fe": {
-						"api_name": "rest api 1",
-						"api_id": "8f753e64caa04c9573458013d805f6fe",
-						"versions": [
-							"Default"
-						],
-						"allowed_urls": [],
-						"restricted_types": [],
-						"limit": null,
-						"field_access_rights": [],
-						"allowance_scope": ""
-					}
-				}
+bronze policy:  
+62ab323a261a3b0001ad48d0
+_id: 62ab323a261a3b0001ad48d0
+policy-62ab323a261a3b0001ad48d0.json
+"access_rights": {
+	"4024c2b9de274b294db16c0835d35b4b": {
+		"api_name": "rest api 3",
+		"api_id": "4024c2b9de274b294db16c0835d35b4b",
+		"versions": [
+			"Default"
+		],
+		"allowed_urls": [],
+		"restricted_types": [],
+		"limit": null,
+		"field_access_rights": [],
+		"allowance_scope": ""
+	},
+	"5a57a484b06d401d4a23c037a5f87ef6": {
+		"api_name": "rest api 2",
+		"api_id": "5a57a484b06d401d4a23c037a5f87ef6",
+		"versions": [
+			"Default"
+		],
+		"allowed_urls": [],
+		"restricted_types": [],
+		"limit": null,
+		"field_access_rights": [],
+		"allowance_scope": ""
+	},
+	"8f753e64caa04c9573458013d805f6fe": {
+		"api_name": "rest api 1",
+		"api_id": "8f753e64caa04c9573458013d805f6fe",
+		"versions": [
+			"Default"
+		],
+		"allowed_urls": [],
+		"restricted_types": [],
+		"limit": null,
+		"field_access_rights": [],
+		"allowance_scope": ""
+	}
+}
 
-silver policy:  62ab326a261a3b0001ad48d1
-                _id: 62ab326a261a3b0001ad48d1
-                policy-62ab326a261a3b0001ad48d1.json
-				"access_rights": {
-					"10645dd132484e776887e125d54202de": {
-						"api_name": "graphql api 1",
-						"api_id": "10645dd132484e776887e125d54202de",
-						"versions": [
-							"Default"
-						],
-						"allowed_urls": [],
-						"restricted_types": [],
-						"limit": null,
-						"field_access_rights": [],
-						"allowance_scope": ""
-					},
-					"efbb9851abb04d64752f4ef0080f2cbe": {
-						"api_name": "graphql api 2",
-						"api_id": "efbb9851abb04d64752f4ef0080f2cbe",
-						"versions": [
-							"Default"
-						],
-						"allowed_urls": [],
-						"restricted_types": [],
-						"limit": null,
-						"field_access_rights": [],
-						"allowance_scope": ""
-					}
-				}
+silver policy:
+id: 62ab326a261a3b0001ad48d1
+_id: 62ab326a261a3b0001ad48d1
+policy-62ab326a261a3b0001ad48d1.json
+"access_rights": {
+	"10645dd132484e776887e125d54202de": {
+		"api_name": "graphql api 1",
+		"api_id": "10645dd132484e776887e125d54202de",
+		"versions": [
+			"Default"
+		],
+		"allowed_urls": [],
+		"restricted_types": [],
+		"limit": null,
+		"field_access_rights": [],
+		"allowance_scope": ""
+	},
+	"efbb9851abb04d64752f4ef0080f2cbe": {
+		"api_name": "graphql api 2",
+		"api_id": "efbb9851abb04d64752f4ef0080f2cbe",
+		"versions": [
+			"Default"
+		],
+		"allowed_urls": [],
+		"restricted_types": [],
+		"limit": null,
+		"field_access_rights": [],
+		"allowance_scope": ""
+	}
+}
                 
-gold policy:	62ab328c261a3b0001ad48d2
-				_id: 62ab328c261a3b0001ad48d2
-                policy-62ab328c261a3b0001ad48d2.json
-				"access_rights": {
-					"99af18a4ad374d40538ddef590b3432f": {
-						"api_name": "tcp api 1",
-						"api_id": "99af18a4ad374d40538ddef590b3432f",
-						"versions": [
-							"Default"
-						],
-						"allowed_urls": [],
-						"restricted_types": [],
-						"limit": null,
-						"field_access_rights": [],
-						"allowance_scope": ""
-					}
-				}
+gold policy:
+id: 62ab328c261a3b0001ad48d2
+_id: 62ab328c261a3b0001ad48d2
+policy-62ab328c261a3b0001ad48d2.json
+"access_rights": {
+	"99af18a4ad374d40538ddef590b3432f": {
+		"api_name": "tcp api 1",
+		"api_id": "99af18a4ad374d40538ddef590b3432f",
+		"versions": [
+			"Default"
+		],
+		"allowed_urls": [],
+		"restricted_types": [],
+		"limit": null,
+		"field_access_rights": [],
+		"allowance_scope": ""
+	}
+}
 
 ------------------------------------------------------
 After Sync:
