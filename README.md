@@ -1,4 +1,4 @@
-# tyk-sync-test
+# tyk-sync-demo
 This demo was built using [Tyk Sync](https://tyk.io/docs/tyk-sync/)
 
 ## Prerequisites
