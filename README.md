@@ -30,6 +30,7 @@ cd ..
 ```
 
 ### 3a. `publish` - Publish API definitions from a Git repo to a Tyk Gateway or Dashboard.
+#### Local
 ```
 docker run --rm \
   --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp \
@@ -38,6 +39,19 @@ docker run --rm \
   -d="http://host.docker.internal:3000" \
   -s="{API_SECRET_FROM_USER_PROFILE}" \
   -p="./tmp" 
+```
+
+#### Git repo
+```
+docker run --rm \
+  --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp \
+  -v ~/.ssh:/root/.ssh \
+  tykio/tyk-sync:v1.2rc3 \
+  publish \
+  -d="http://host.docker.internal:3000" \
+  -s="{API_SECRET_FROM_USER_PROFILE}" \
+  -k="/opt/tyk-sync/tmp/key/tyk_sync_key" \
+  -b="refs/heads/{REPOSITORY_BRANCH_NAME}" git@github.com:{USERNAME}/{REPOSITORY_NAME}.git
 ```
 
 ### 3b. `sync` - Synchronise an API Gateway with the contents of a Github repository.
