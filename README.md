@@ -6,6 +6,8 @@
 
 > After migrating a Policy from one environment to another, it is important to note that the displayed Policy ID is not going to match. That is okay. It happens because Tyk Dashboard displays the `Mongo ObjectId`, which is the `_id` field, but the id is the important part.
 
+This demo was built using [Tyk Sync](https://tyk.io/docs/tyk-sync/)
+
 ## Testing the CI/CD flow
 ### 1. Create tmp and key directories
 ```
@@ -66,6 +68,4 @@ docker run --rm \
 ```
 
 #### Note:
-But what about upper environments (pre-prod/prod) ? The concern here is that each Tyk env will be connected to different backend systems, so the target URL´s will change among other stuff (virtual endpoints/middleware configs/etc), I assume this must be a manual change after deploy and subsequent dump of the upper-envs to back-up our configs as code. 
-
-A script will need to be created in order to change the manual
+But what about upper environments (pre-prod/prod) ? The concern here is that each Tyk env will be connected to different backend systems, so the target URL´s will change among other stuff (virtual endpoints/middleware configs/etc), I assume this must be a manual change after deploy and subsequent dump of the upper-envs to back-up our configs as code. A script and/or pipeline action will most likely be needed in order to manually change the specific configs.
