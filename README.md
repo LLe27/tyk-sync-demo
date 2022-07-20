@@ -24,7 +24,7 @@ docker run --rm --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp \
  dump \
  -d="http://host.docker.internal:3000" \
  -s="e3c29619be19465673dd6e468c2d2c63" \
- -t="./definitions"
+ -t="./tmp"
 
 cd ..
 ```
@@ -49,9 +49,9 @@ docker run --rm \
   tykio/tyk-sync:v1.2rc3 \
   publish \
   -d="http://host.docker.internal:3000" \
-  -s="{API_SECRET_FROM_USER_PROFILE}" \
+  -s="e3c29619be19465673dd6e468c2d2c63" \
   -k="/opt/tyk-sync/tmp/key/tyk_sync_key" \
-  -b="refs/heads/{REPOSITORY_BRANCH_NAME}" git@github.com:{USERNAME}/{REPOSITORY_NAME}.git
+  -b="refs/heads/main" git@github.com:LLe27/tyk-sync-demo.git
 ```
 
 ### 3b. `sync` - Synchronise an API Gateway with the contents of a Github repository.
