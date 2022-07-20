@@ -23,8 +23,8 @@ docker run --rm --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp \
  tykio/tyk-sync:v1.2rc3 \
  dump \
  -d="http://host.docker.internal:3000" \
- -s="{API_SECRET_FROM_USER_PROFILE}" \
- -t="./tmp"
+ -s="e3c29619be19465673dd6e468c2d2c63" \
+ -t="./definitions"
 
 cd ..
 ```

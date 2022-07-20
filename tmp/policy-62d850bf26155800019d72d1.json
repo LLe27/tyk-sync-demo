@@ -1,0 +1,54 @@
+{
+  "_id": "62d850bf26155800019d72d1",
+  "id": "62d850bf26155800019d72d1",
+  "name": "graph policy",
+  "org_id": "62d80d951bcaa90001dcf88d",
+  "rate": 1000,
+  "per": 60,
+  "quota_max": -1,
+  "quota_renewal_rate": -1,
+  "throttle_interval": -1,
+  "throttle_retry_limit": -1,
+  "max_query_depth": -1,
+  "access_rights": {
+    "cb6709f81ec64ad761a117511bf0b6ef": {
+      "api_name": "graphql",
+      "api_id": "cb6709f81ec64ad761a117511bf0b6ef",
+      "versions": [
+        "Default"
+      ],
+      "allowed_urls": [],
+      "restricted_types": [],
+      "limit": null,
+      "field_access_rights": [],
+      "allowance_scope": ""
+    },
+    "e87922143c124d83510c3179667ceb7f": {
+      "api_name": "udg",
+      "api_id": "e87922143c124d83510c3179667ceb7f",
+      "versions": [
+        "Default"
+      ],
+      "allowed_urls": [],
+      "restricted_types": [],
+      "limit": null,
+      "field_access_rights": [],
+      "allowance_scope": ""
+    }
+  },
+  "hmac_enabled": false,
+  "active": true,
+  "is_inactive": false,
+  "date_created": "2022-07-20T19:00:15.27Z",
+  "tags": [],
+  "key_expires_in": 0,
+  "partitions": {
+    "quota": true,
+    "rate_limit": true,
+    "complexity": true,
+    "acl": true,
+    "per_api": false
+  },
+  "last_updated": "1658343615",
+  "meta_data": {}
+}

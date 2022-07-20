@@ -1,0 +1,42 @@
+{
+  "_id": "62d850b126155800019d72d0",
+  "id": "62d850b126155800019d72d0",
+  "name": "rest policy",
+  "org_id": "62d80d951bcaa90001dcf88d",
+  "rate": 1000,
+  "per": 60,
+  "quota_max": -1,
+  "quota_renewal_rate": -1,
+  "throttle_interval": -1,
+  "throttle_retry_limit": -1,
+  "max_query_depth": -1,
+  "access_rights": {
+    "f6a761f86e3246434ff3b0fda3afd68a": {
+      "api_name": "rest",
+      "api_id": "f6a761f86e3246434ff3b0fda3afd68a",
+      "versions": [
+        "Default"
+      ],
+      "allowed_urls": [],
+      "restricted_types": [],
+      "limit": null,
+      "field_access_rights": [],
+      "allowance_scope": ""
+    }
+  },
+  "hmac_enabled": false,
+  "active": true,
+  "is_inactive": false,
+  "date_created": "2022-07-20T19:00:01.48Z",
+  "tags": [],
+  "key_expires_in": 0,
+  "partitions": {
+    "quota": true,
+    "rate_limit": true,
+    "complexity": false,
+    "acl": true,
+    "per_api": false
+  },
+  "last_updated": "1658343601",
+  "meta_data": {}
+}
