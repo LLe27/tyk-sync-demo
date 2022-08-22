@@ -20,10 +20,10 @@ mkdir key
 cd tmp
 
 docker run --rm --mount type=bind,source="$(pwd)",target=/opt/tyk-sync/tmp \
- tykio/tyk-sync:v1.2rc3 \
+ tykio/tyk-sync:{TYK_SYNC_VERSION} \
  dump \
  -d="http://host.docker.internal:3000" \
- -s="e3c29619be19465673dd6e468c2d2c63" \
+ -s="{API_SECRET_FROM_USER_PROFILE}" \
  -t="./tmp"
 
 cd ..
@@ -49,7 +49,7 @@ docker run --rm \
   tykio/tyk-sync:v1.2rc3 \
   publish \
   -d="http://host.docker.internal:3000" \
-  -s="e3c29619be19465673dd6e468c2d2c63" \
+  -s="{API_SECRET_FROM_USER_PROFILE}" \
   -k="/opt/tyk-sync/tmp/key/tyk_sync_key" \
   -b="refs/heads/main" git@github.com:LLe27/tyk-sync-demo.git
 ```
